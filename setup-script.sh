@@ -16,6 +16,7 @@ subnetName="$vnetName-subnet"
 probeName="tcpProbe"
 vmSize="Standard_B1s"
 storageType="Standard_LRS"
+orchestrationMode="Uniform"
 
 # Create resource group. 
 # This command will not work for the Cloud Lab users. 
@@ -68,6 +69,7 @@ az vmss create \
   --custom-data cloud-init.txt \
   --upgrade-policy-mode automatic \
   --admin-username $adminName \
+  --orchestration-mode $orchestrationMode \
   --generate-ssh-keys \
   --verbose 
 
